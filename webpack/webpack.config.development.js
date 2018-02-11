@@ -29,6 +29,9 @@ module.exports = {
     modules: ["node_modules", "src"],
     plugins: [
       new DirectoryNamedWebpackPlugin()
-    ]
+    ],
+    alias: {
+      '@nta/trxm-frontend-react-common-components': path.resolve(__dirname, '../src')
+    }
   }
 }
