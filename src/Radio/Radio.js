@@ -22,6 +22,10 @@ const WrapperBase = styled.label`
     left: -2rem;
   }  
 
+  input:focus ~ ${RadioBorder} {
+    border-color: #0098db;
+  }
+
   :hover {
     ${RadioIcon} {    
       opacity: 1;
