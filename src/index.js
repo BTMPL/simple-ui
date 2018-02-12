@@ -21,7 +21,28 @@ import Select from './Select/Select.js';
 import Input from './Input/Input.js';
 import { Radio, Checkbox } from './Radio/Radio.js';
 
+import { 
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableHeaderCell,
+  TableRow 
+} from './Table/index.js';
 
+import Fragment from './atoms/Fragment';
+
+const items = [
+  {
+    id: 1,
+    title: 'test',
+    description: 'hello world'
+  },
+  {
+    id: 2,
+    title: 'other row',
+    description: 'other row description'
+  }  
+];
 
 
 const Placeholder = styled.div`
@@ -207,6 +228,39 @@ class App extends React.PureComponent {
          - select height 48px
          <br />- font size 14px??
         </p> 
+
+        <Table header={
+          <TableRow>
+            <TableHeaderCell colSpan="2" style={{textAlign: 'left'}}>Hi!</TableHeaderCell>
+          </TableRow>          
+        } footer={
+          <TableRow>
+            <TableCell colSpan="2">Footer!</TableCell>
+          </TableRow>
+        }>
+          {({toggle, isOpened, closeAll}) => {
+            return <TableBody>
+              {items.map(item => (
+                <Fragment key={item.id}>
+                  <TableRow>
+                    <TableCell onClick={() => toggle(item.id)} width="15">
+                      {isOpened(item.id) ? '-':'+'}
+                    </TableCell>
+                    <TableCell>{item.title}</TableCell>
+                  </TableRow>
+                  {isOpened(item.id) && <TableRow>
+                    <TableCell colSpan="2">{item.description}</TableCell>
+                  </TableRow>}                                    
+                </Fragment>
+              ))}
+              <TableRow>
+                <TableCell colSpan="2">
+                  <button onClick={closeAll}>close all</button>
+                </TableCell>
+              </TableRow>        
+            </TableBody>
+          }}
+        </Table>        
         
         <Input 
           label={"O hai there"}
