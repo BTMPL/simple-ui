@@ -6,8 +6,8 @@ const ToggleArrowComponent = ({
   className, color = '#0098db'
 }) => (
   <svg width="1rem" height="1rem" viewBox="0 0 32 64" xmlSpace="preserve" className={className}>
-    <polyline fill="#fff" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" points="
-	  32,64 0,32 32,0" />
+    <polyline fill="#fff" stroke={color} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" points="
+    30,60 0,32 30,5" />
   </svg>    
 );
 
