@@ -46,7 +46,7 @@ modules.forEach((module) => {
   }).then(bundle => bundle.write({
     dir: `dist`,
     file: `dist/${module}`,
-    format: 'es',
+    format: 'cjs',
     sourcemap: true,
   })));
 });

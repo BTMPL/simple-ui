@@ -6,7 +6,7 @@ import TableHeader from '@nta/trxm-frontend-react-common-components/Table/TableH
 import TableFooter from '@nta/trxm-frontend-react-common-components/Table/TableFooter';
 
 const TableComponent = styled.table`
-
+  font-size: 0.875rem;
 `;
 
 export default class Table extends Component {
